@@ -46,7 +46,7 @@ header {
 }
 
 .ranking-div{
-  text-align: center;
+  text-align: center
 }
 
 .anime-card{
@@ -80,4 +80,10 @@ header {
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
+}
+
+.pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

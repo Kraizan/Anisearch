@@ -12,8 +12,8 @@ function Header(){
       <div className="nav-list">
         <a className="nav-link" href="/">Top Rated</a>
         <a className="nav-link" href="popular">Popular</a>
-        <a className="nav-link" href="top">Recommend</a>
-        <a className="nav-link" href="top">Trace</a>
+        <a className="nav-link" href="recommend">Recommend</a>
+        <a className="nav-link" href="trace">Trace</a>
       </div>
     </header>
   )

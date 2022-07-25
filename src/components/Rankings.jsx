@@ -1,22 +1,27 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios"
+import Pagination from '@mui/material/Pagination';
 import Card from "./Card";
 
 function Rankings(props){
   const {url} = props;
-  console.log(url)
+  var page = props.page;
   const animeData = [];
   const [fetchData, setFetchData] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(function effectFunction() {
-    async function fetchData() {
-      const response = await axios.get(url);
+    async function fetchData(currentPage) {
+      const response = await axios.get(
+        url + (props.popularity ? "&" : "?") + "page=" + currentPage);
       const res = await response.data;
       setFetchData(res.data);
+      setTotalPages(res.pagination.last_visible_page);
     }
-    fetchData();
-  }, [url]);
-  console.log(fetchData);
+    fetchData(currentPage);
+  }, [currentPage]);
+
   for (var i = 0; i < fetchData.length; i++) {
     const currentAnime = fetchData[i];
     animeData.push({
@@ -30,6 +35,11 @@ function Rankings(props){
       episodes: currentAnime.episodes,
       url: currentAnime.images.jpg.image_url,
     });
+  }
+
+  function handleChange(event, value) {
+    page = value;
+    setCurrentPage(page);
   }
 
   return (
@@ -50,6 +60,7 @@ function Rankings(props){
              />
            );
       })}
+      <Pagination count={totalPages} className="pagination" page={currentPage} onChange={handleChange} />
     </div>
   )
 }

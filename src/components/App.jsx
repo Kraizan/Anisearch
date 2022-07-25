@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header"
 import Homepage from "./Homepage"
 import Popular from "./Popular"
+import Recommend from "./Recommend"
 import {Routes, Route} from "react-router-dom"
 
 function App() {
