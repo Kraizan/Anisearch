@@ -2,18 +2,18 @@ import React from "react";
 
 function Header(){
   return (
-    <header id="top" class="navbar">
-      <div class="brand-name">
+    <header id="top" className="navbar">
+      <div className="brand-name">
         Anisearch
       </div>
-      <div class="brand-tagline">
+      <div className="brand-tagline">
         Find your next anime.
       </div>
-      <div class="nav-list">
-        <a class="nav-link" href="top">Top Rated</a>
-        <a class="nav-link" href="top">Popular</a>
-        <a class="nav-link" href="top">Recommend</a>
-        <a class="nav-link" href="top">Trace</a>
+      <div className="nav-list">
+        <a className="nav-link" href="top">Top Rated</a>
+        <a className="nav-link" href="top">Popular</a>
+        <a className="nav-link" href="top">Recommend</a>
+        <a className="nav-link" href="top">Trace</a>
       </div>
     </header>
   )
