@@ -10,8 +10,8 @@ function Header(){
         Find your next anime.
       </div>
       <div className="nav-list">
-        <a className="nav-link" href="top">Top Rated</a>
-        <a className="nav-link" href="top">Popular</a>
+        <a className="nav-link" href="/">Top Rated</a>
+        <a className="nav-link" href="popular">Popular</a>
         <a className="nav-link" href="top">Recommend</a>
         <a className="nav-link" href="top">Trace</a>
       </div>
