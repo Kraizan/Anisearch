@@ -45,11 +45,11 @@ header {
   color: black;
 }
 
-.ranking-div{
+.ranking-div {
   text-align: center
 }
 
-.anime-card{
+.anime-card {
   margin: 2% 1%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   width: 17vw;
@@ -59,7 +59,7 @@ header {
   align-items: center;
 }
 
-.anime-title{
+.anime-title {
   text-align: center;
   width: 90%;
   font-size: 1.1rem;
@@ -73,7 +73,7 @@ header {
   object-position: center;
 }
 
-.card-desc{
+.card-desc {
   text-align: left;
   margin-top: 3%;
   width: 90%;
@@ -82,7 +82,7 @@ header {
   font-size: 1rem;
 }
 
-.pagination{
+.pagination {
   width: 100%;
   display: flex;
   justify-content: center;
