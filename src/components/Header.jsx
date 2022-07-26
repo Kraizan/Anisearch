@@ -1,4 +1,5 @@
 import React from "react";
+import TemporaryDrawer from "./DrawerMenu";
 
 function Header(){
   return (
@@ -10,10 +11,9 @@ function Header(){
         Find your next anime.
       </div>
       <div className="nav-list">
-        <a className="nav-link" href="/">Top Rated</a>
-        <a className="nav-link" href="popular">Popular</a>
-        <a className="nav-link" href="recommend">Recommend</a>
-        <a className="nav-link" href="trace">Trace</a>
+        <TemporaryDrawer
+          data={["Top", "Popular", "Recommend", "Trace"]}
+        />
       </div>
     </header>
   )

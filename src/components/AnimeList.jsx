@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios"
 import Pagination from '@mui/material/Pagination';
-import HashLoader from "react-spinners/HashLoader";
 import Card from "./Card";
+import Loading from "./Loading";
 
-function Rankings(props){
+function AnimeList(props){
   const {url} = props;
   var page = props.page;
   const animeData = [];
@@ -50,17 +50,7 @@ function Rankings(props){
     <div>
       {
         loading
-        ? <HashLoader
-          color="#2db3ac"
-          className="loader"
-          cssOverride={{
-            position: 'fixed',
-            top: '46%',
-            left: '46%'
-          }}
-          size={120}
-          speedMultiplier={0.8}
-        />
+        ? <Loading />
         : <div>
           <div className="ranking-div">
             {animeData.map((anime) => {
@@ -87,4 +77,4 @@ function Rankings(props){
   )
 }
 
-export default Rankings;
+export default AnimeList;

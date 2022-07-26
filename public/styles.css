@@ -45,6 +45,12 @@ header {
   color: black;
 }
 
+.content {
+  position: fixed;
+  height: 90vh;
+  overflow-y: scroll;
+}
+
 .ranking-div {
   text-align: center
 }
@@ -86,4 +92,8 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.menu-icon{
+  font-size: 2rem;
 }
