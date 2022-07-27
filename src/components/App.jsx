@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Header from "./Header"
+// import Loading from "./Loading"
 import Home from "./Home"
 import TopAnime from "./TopAnime"
 import Popular from "./Popular"
-import Recommend from "./Recommend"
+// import Recommend from "./Recommend"
 import FetchData from "./FetchData"
 import Pagination from '@mui/material/Pagination'
 import {Routes, Route} from "react-router-dom"
@@ -16,17 +17,20 @@ function App() {
   const [totalPages, setTotalPages] = useState(1);
   const [query, setQuery] = useState(null);
   const [filter, setFilter] = useState("airing");
+  // const [loading, setLoading] = useState(false)
 
-  function handleSetChanges(url, page, query, filter){
-    console.log(url, page, query, filter);
+  function handleSetChanges(url, page, query, filter) {
     setFilter(filter);
     setQuery(query);
     setPage(page);
+    // setLoading(true);
     FetchData(url, page, query, filter)
     .then(res => {
       setData(res.animeData);
       setTotalPages(res.pagination.last_visible_page);
+      // setLoading(false);
     });
+
   }
 
   function handleChange(event, value) {

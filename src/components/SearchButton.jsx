@@ -1,9 +1,8 @@
 import React from "react"
 import Button from '@mui/material/Button';
-import FetchData from "./FetchData"
 
 function SearchButton(props){
-  const {url, page, onDataChange, data, query, filter, totalPages, setSearch} = props;
+  const {url, onDataChange, query, setSearch} = props;
 
   function handleClick(){
     onDataChange(url, "1", query, "members")

@@ -19,7 +19,6 @@ function Home(props) {
       <AnimeList
         url={url}
         page={page}
-        filter="airing"
         onDataChange={onDataChange}
         data={data}
         query={query}
