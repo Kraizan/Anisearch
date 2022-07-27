@@ -1,7 +1,7 @@
 import React from "react";
 import AnimeList from "./AnimeList"
 
-function Popular(props) {
+function TopAnime(props) {
   const {url, page} = props;
 
   return (
@@ -9,10 +9,9 @@ function Popular(props) {
       <AnimeList
         url={url}
         page={page}
-        filter="popularity"
       />
     </div>
   )
 }
 
-export default Popular;
+export default TopAnime;

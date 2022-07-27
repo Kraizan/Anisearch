@@ -1,19 +1,23 @@
 import React from "react";
 import AnimeList from "./AnimeList"
+import SearchBar from "./SearchBar"
 
-function Homepage(props) {
+function Home(props) {
   const {url, page} = props;
 
   return (
     <div>
+      <SearchBar
+        url={url}
+        page={page}
+      />
       <AnimeList
         url={url}
         page={page}
-        popularity={false}
+        filter="airing"
       />
     </div>
-
   )
 }
 
-export default Homepage;
+export default Home;

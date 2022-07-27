@@ -1,49 +1,34 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios"
 import Pagination from '@mui/material/Pagination';
 import Card from "./Card";
 import Loading from "./Loading";
+import FetchData from "./FetchData"
 
 function AnimeList(props){
-  const {url} = props;
-  var page = props.page;
-  const animeData = [];
-  const [fetchData, setFetchData] = useState({});
+  var {url, page, filter} = props;
+  const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  useEffect(function effectFunction() {
-    async function fetchData(currentPage) {
-      setLoading(true);
-      const response = await axios.get(
-        url + (props.popularity ? "&" : "?") + "page=" + currentPage);
-      const res = await response.data;
-      setFetchData(res.data);
-      setTotalPages(res.pagination.last_visible_page);
-      setLoading(false);
-    }
-    fetchData(currentPage);
-  }, [currentPage]);
-
-  for (var i = 0; i < fetchData.length; i++) {
-    const currentAnime = fetchData[i];
-    animeData.push({
-      id: currentAnime.mal_id,
-      name: currentAnime.title,
-      type: currentAnime.type,
-      rank: currentAnime.rank,
-      popularity: currentAnime.popularity,
-      score: currentAnime.score,
-      year: currentAnime.aired.prop.from.year,
-      episodes: currentAnime.episodes,
-      url: currentAnime.images.jpg.image_url,
-    });
+  function handleSetChanges(res){
+    setData(res.animeData);
+    setTotalPages(res.pagination.last_visible_page);
   }
+
+  useEffect(function effectFunction(){
+    setLoading(true);
+    FetchData(url, currentPage, null, filter)
+    .then(res => {
+      handleSetChanges(res);
+      setLoading(false);
+    });
+    setCurrentPage(currentPage);
+  }, [currentPage])
 
   function handleChange(event, value) {
     page = value;
-    setCurrentPage(page);
+    setCurrentPage(page)
   }
 
   return (
@@ -51,9 +36,8 @@ function AnimeList(props){
       {
         loading
         ? <Loading />
-        : <div>
-          <div className="ranking-div">
-            {animeData.map((anime) => {
+        : <div className="ranking-div">
+            {data.map((anime) => {
                  return (
                    <Card
                      key= {anime.id}
@@ -71,7 +55,6 @@ function AnimeList(props){
             })}
             <Pagination count={totalPages} className="pagination" page={currentPage} onChange={handleChange} />
           </div>
-        </div>
       }
     </div>
   )

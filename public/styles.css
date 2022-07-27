@@ -45,28 +45,35 @@ header {
   color: black;
 }
 
+/* Content section*/
 .content {
   position: fixed;
   height: 90vh;
   overflow-y: scroll;
+  width: 100%;
 }
 
 .ranking-div {
   text-align: center
 }
 
+
+/* Anime card styles.*/
 .anime-card {
   margin: 2% 1%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   width: 17vw;
-  height: 65vh;
+  height: 60vh;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: hidden;
 }
 
 .anime-title {
   text-align: center;
+  height: 15%;
+  overflow-y: hidden;
   width: 90%;
   font-size: 1.1rem;
 }
@@ -85,15 +92,26 @@ header {
   width: 90%;
   display: flex;
   justify-content: space-between;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
+/* Pagination */
 .pagination {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
+/* Menu Icon*/
 .menu-icon{
   font-size: 2rem;
+}
+
+/* Search bar and content headers*/
+.search-bar{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 3% auto;
+  width: 50vw;
 }
