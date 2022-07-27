@@ -1,16 +1,13 @@
 import React from "react"
 import Button from '@mui/material/Button';
 import FetchData from "./FetchData"
-import AnimeList from "./AnimeList"
 
 function SearchButton(props){
-  var {query, url, page, filter} = props;
+  const {url, page, onDataChange, data, query, filter, totalPages, setSearch} = props;
 
   function handleClick(){
-    FetchData(url, page, query, filter)
-    .then(data => {
-      console.log(url, page, query, filter);
-    });
+    onDataChange(url, "1", query, "members")
+    setSearch("");
   }
 
   return (

@@ -7,7 +7,7 @@ async function FetchData(url,page,query,filter) {
     searchUrl += "/anime?page=" + page;
     searchUrl += "&q=" + query;
     if(filter){
-      searchUrl += "&order_by=" + filter + "&sort=asc";
+      searchUrl += "&order_by=" + filter  + "&sort=desc";
     }
   }
   else{

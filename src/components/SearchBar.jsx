@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField'
 import SearchButton from "./SearchButton"
 
 function SearchBar(props){
-  const {url, page, multiple} = props;
+  const {url, page, onDataChange, data, query, filter, totalPages} = props;
 
   const [search, setSearch] = useState("");
 
@@ -26,10 +26,14 @@ function SearchBar(props){
         }}
       />
       <SearchButton
-        query={search}
         url={url}
         page={page}
-        multiple={multiple}
+        onDataChange={onDataChange}
+        data={data}
+        query={search}
+        filter={filter}
+        totalPages={totalPages}
+        setSearch={setSearch}
       />
     </div>
   )
