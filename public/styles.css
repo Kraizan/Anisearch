@@ -11,6 +11,7 @@ body {
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #458c7a;
   height: 10vh;
   color: #fffef5;
@@ -18,7 +19,7 @@ header {
 
 /*Header and navigation bar*/
 .brand-name {
-  width: 33.33%;
+  float: left;
   font-size: 2rem;
   text-align: left;
   padding-left: 4%;
@@ -30,7 +31,7 @@ header {
 }
 
 .nav-list {
-  width: 33.33%;
+  float: right;
   text-align: right;
   padding-right: 4%;
 }
@@ -57,44 +58,6 @@ header {
   text-align: center
 }
 
-
-/* Anime card styles.*/
-.anime-card {
-  margin: 2% 1%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  width: 17vw;
-  height: 60vh;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: hidden;
-}
-
-.anime-title {
-  text-align: center;
-  height: 15%;
-  overflow-y: hidden;
-  width: 90%;
-  font-size: 1.1rem;
-}
-
-.anime-image {
-  height: 60%;
-  width: 90%;
-  margin: 2% 2%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.card-desc {
-  text-align: left;
-  margin-top: 3%;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-}
-
 /* Pagination */
 .pagination {
   width: 100%;
@@ -109,6 +72,14 @@ header {
 
 /* Search bar and content headers*/
 .search-bar{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 3% auto;
+  width: 50vw;
+}
+
+.form{
   justify-content: center;
   display: flex;
   align-items: center;

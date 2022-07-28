@@ -7,9 +7,6 @@ function Header(){
       <div className="brand-name">
         Anisearch
       </div>
-      <div className="brand-tagline">
-        Find your next anime.
-      </div>
       <div className="nav-list">
         <TemporaryDrawer
           data={["Home", "Top", "Popular", "Recommend", "Trace"]}

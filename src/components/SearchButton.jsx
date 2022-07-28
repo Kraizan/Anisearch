@@ -5,7 +5,7 @@ function SearchButton(props){
   const {url, onDataChange, query, setSearch} = props;
 
   function handleClick(){
-    onDataChange(url, "1", query, "members")
+    onDataChange(url, 1, query, "members")
     setSearch("");
   }
 
