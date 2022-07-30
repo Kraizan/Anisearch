@@ -1,11 +1,12 @@
 import React from "react"
-import Button from '@mui/material/Button';
+import Button from '@mui/material/Button'
+import {Routes, Route} from "react-router-dom"
 
 function SearchButton(props){
   const {url, onDataChange, query, setSearch} = props;
 
-  function handleClick(){
-    onDataChange(url, 1, query, "members")
+  async function handleClick(){
+    await onDataChange(url, 1, query, "members")
     setSearch("");
   }
 

@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 import Header from "./Header"
 import Home from "./Home"
+import Airing from "./Airing"
 import TopAnime from "./TopAnime"
 import Popular from "./Popular"
-import Recommend from "./Recommend"
+import AnimeDetails from "./AnimeDetails"
 import FetchData from "./FetchData"
 import Pagination from '@mui/material/Pagination'
 import {Routes, Route} from "react-router-dom"
+import Backdrop from "./Loading"
+
 
 function App() {
   const url = "https://api.jikan.moe/v4";
@@ -16,16 +19,20 @@ function App() {
   const [totalPages, setTotalPages] = useState(1);
   const [query, setQuery] = useState(null);
   const [filter, setFilter] = useState("airing");
+  const [open, setOpen] = useState(false);
 
   function handleSetChanges(url, page, query, filter) {
     setFilter(filter);
     setQuery(query);
     setPage(page);
+    setOpen(true);
     FetchData(url, page, query, filter)
     .then(function(res){
       setData(res.animeData);
       setTotalPages(res.pagination.last_visible_page);
+      setOpen(false);
     });
+
   }
 
   function handleChange(event, value) {
@@ -36,43 +43,78 @@ function App() {
   return (
     <div>
       <Header />
+      <Backdrop open={open}/>
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home
-            url={url}
-            page={1}
-            onDataChange={handleSetChanges}
-            data={data}
-            query={query}
-            filter={filter}
-            totalPages={totalPages}
-          />} />
-          <Route path="/home" element={<Home
-            url={url}
-            page={1}
-            onDataChange={handleSetChanges}
-            data={data}
-            query={query}
-            filter={filter}
-            totalPages={totalPages}
-          />} />
-          <Route path="/top" element={<TopAnime
-            url={url}
-            page={1}
-            onDataChange={handleSetChanges}
-            data={data}
-            totalPages={totalPages}
-          />} />
-          <Route path="/popular" element={<Popular
-            url={url}
-            page={1}
-            onDataChange={handleSetChanges}
-            data={data}
-            totalPages={totalPages}
-          />} />
-          <Route path="/recommend" element={<Recommend/>} />
+          <Route path="/anime/home" element={<div>
+            <Home
+              url={url}
+              page={1}
+              onDataChange={handleSetChanges}
+              data={data}
+              query={query}
+              filter={filter}
+              totalPages={totalPages}
+            />
+            <Pagination
+              count={totalPages}
+              className="pagination"
+              page={page}
+              onChange={handleChange}
+            />
+          </div>} />
+          <Route path="/anime/airing" element={<div>
+            <Airing
+              title="Currently Airing"
+              url={url}
+              page={1}
+              onDataChange={handleSetChanges}
+              data={data}
+              query={query}
+              filter={filter}
+              totalPages={totalPages}
+            />
+            <Pagination
+              count={totalPages}
+              className="pagination"
+              page={page}
+              onChange={handleChange}
+            />
+          </div>} />
+          <Route path="/anime/top" element={<div>
+            <TopAnime
+              title="Top Rated"
+              url={url}
+              page={1}
+              onDataChange={handleSetChanges}
+              data={data}
+              totalPages={totalPages}
+            />
+            <Pagination
+              count={totalPages}
+              className="pagination"
+              page={page}
+              onChange={handleChange}
+            />
+          </div>} />
+          <Route path="/anime/popular" element={<div>
+            <Popular
+              title="Most Popular"
+              url={url}
+              page={1}
+              onDataChange={handleSetChanges}
+              data={data}
+              totalPages={totalPages}
+            />
+            <Pagination
+              count={totalPages}
+              className="pagination"
+              page={page}
+              onChange={handleChange}
+            />
+          </div>} />
+          <Route path="/anime/:id" element={<AnimeDetails />} />
         </Routes>
-        <Pagination count={totalPages} className="pagination" page={page} onChange={handleChange} />
       </div>
     </div>
   );

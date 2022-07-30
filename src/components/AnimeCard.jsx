@@ -2,13 +2,16 @@ import React from "react";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
 import { CardActionArea, CardActions } from '@mui/material';
+import {Link} from "react-router-dom"
 
 function AnimeCard(props){
+  const toUrl = "/anime/" + props.id;
   return (
       <Card sx={{
         width: "220px",
-        height: "70vh",
+        height: "550px",
         display: "inline-flex",
         flexDirection: "column",
         alignItems: "center",
@@ -18,7 +21,7 @@ function AnimeCard(props){
       }}>
         <CardActionArea
           sx={{
-            height: "80%",
+            height: "400px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center"
@@ -29,7 +32,7 @@ function AnimeCard(props){
             image={props.url}
             alt={props.name}
             sx={{
-              height: "86%",
+              height: "350px",
               width: "90%",
               objectFit: "cover",
               objectPosition: "center",
@@ -40,24 +43,24 @@ function AnimeCard(props){
               padding: "3%",
               fontWeight: "bold",
               textAlign: "center",
-              height: "14%",
+              height: "60px",
               overflowY: "hidden",
               width: "90%",
               fontSize: "1.1rem",
             }}
           >
-            {props.name}
+          {props.name}
           </CardContent>
         </CardActionArea>
         <CardContent
           sx={{
-            height: "20%",
+            height: "100px",
             textAlign: "left",
             marginTop: "3%",
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
-            fontSize: "0.9rem",
+            fontSize: "0.8rem",
           }}
         >
           <CardContent
@@ -75,6 +78,26 @@ function AnimeCard(props){
             <p>Episodes: {props.episodes}</p>
           </CardContent>
         </CardContent>
+        <CardActions
+          sx={{
+            width: "220px",
+            height: "20px"
+          }}
+        >
+        <Button
+          component={Link} to={toUrl}
+          size="large"
+          variant="contained"
+          color="success"
+          sx={{
+            backgroundColor: "#458c7a",
+            color: "white",
+            width: "220px",
+          }}
+        >
+          Full Details
+        </Button>
+      </CardActions>
       </Card>
   );
 }

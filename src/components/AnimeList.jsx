@@ -3,7 +3,7 @@ import AnimeCard from "./AnimeCard";
 import Loading from "./Loading"
 
 function AnimeList(props){
-  var {url, page, filter, onDataChange, data, query} = props;
+  var {url, page, filter, onDataChange, data, query, length} = props;
 
   const [loading, setLoading] = useState(false);
 

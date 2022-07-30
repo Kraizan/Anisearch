@@ -30,7 +30,7 @@ function TemporaryDrawer(props) {
       <List>
         {props.data.map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton href={text.toLowerCase()}>
+            <ListItemButton href={"/anime/"+text.toLowerCase()}>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

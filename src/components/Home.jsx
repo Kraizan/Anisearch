@@ -1,8 +1,9 @@
-import React from "react";
-import AnimeList from "./AnimeList"
+import React, {useState, useEffect} from "react"
+import axios from "axios"
 import SearchBar from "./SearchBar"
+import AnimeList from "./AnimeList"
 
-function Home(props) {
+function Home(props){
   const {url, page, onDataChange, data, query, filter, totalPages} = props;
 
   return (

@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arvo', serif;
+  line-height: 1.5;
+}
+
+body {
+  font-size: 1.1em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #458c7a;
+  height: 10vh;
+  color: #fffef5;
+}
+
+/*Header and navigation bar*/
+.brand-name {
+  float: left;
+  font-size: 2rem;
+  text-align: left;
+  padding-left: 4%;
+}
+
+.brand-tagline {
+  width: 33.33%;
+  text-align: center;
+}
+
+.nav-list {
+  float: right;
+  text-align: right;
+  padding-right: 4%;
+}
+
+.nav-link {
+  margin: auto 2%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+/* Content section*/
+.content {
+  position: fixed;
+  height: 90vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.ranking-div {
+  text-align: center
+}
+
+/* Pagination */
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Menu Icon*/
+.menu-icon{
+  font-size: 2rem;
+}
+
+/* Search bar and content headers*/
+.search-bar{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 3% auto;
+  width: 50vw;
+}
+
+.form{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 3% auto;
+  width: 50vw;
+}
+
+
+/* Anime details page */
+.anime-details-container{
+  display: flex;
+  justify-content: center;
+  margin: 3%;
+}
+.info-col{
+  width: 20vw;
+}
+.image-container{
+  width: 100%;
+}
+.anime-image{
+  width: 100%;
+}
+.info-box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.info-div{
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 2px 0;
+}
+.details-header{
+  display: flex;
+  justify-content: space-between;
+}
+.det-header-content{
+
+}
+.stats-row{
+  display: flex;
+  margin: 2% 0;
+  width: 30vw;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+.stats-heading{
+  color: #458c7a;
+  text-shadow: 1px 1px 0.5px #458c7a;
+}
+.info-row{
+  display: flex;
+  flex-direction: column;
+}
+.info-section-heading{
+  color: #458c7a;
+  text-shadow: 1px 1px 0.5px #458c7a;
+  font-size: 1.4rem;
+  margin-top: 2%;
+}
+.border-margin{
+  border: 2px solid black;
+  padding: 1%;
+}
+.anime-title{
+  color: #458c7a;
+  text-shadow: 1px 1px 1px #000;
+  margin-bottom: 5%;
+}
+.padding-anime-content{
+  padding-left: 5%;
+  padding-right: 3%;
+}
+.hr-underline{
+  width: 40%;
+  margin: 1% 0;
+}
+.information-hr{
+  width: 80%;
+  margin: 1% 0;
+}
+.content-container{
+  width: 70%;
+}
+.synopsis-style{
+  text-align: justify;
+}
+.margin-points{
+  margin-right: 4px;
+}
+.page-header{
+  display: flex;
+  justify-content: center;
+  margin: 1% auto;
+}
+.page-header h2{
+  font-size: 2rem;
+}

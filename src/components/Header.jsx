@@ -9,7 +9,7 @@ function Header(){
       </div>
       <div className="nav-list">
         <TemporaryDrawer
-          data={["Home", "Top", "Popular", "Recommend", "Trace"]}
+          data={["Home", "Airing", "Top", "Popular", "Recommend"]}
         />
       </div>
     </header>
