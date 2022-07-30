@@ -7,7 +7,7 @@ import { CardActionArea, CardActions } from '@mui/material';
 import {Link} from "react-router-dom"
 
 function AnimeCard(props){
-  const toUrl = "/anime/" + props.id;
+  const toUrl = "/" + props.id;
   return (
       <Card sx={{
         width: "220px",

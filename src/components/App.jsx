@@ -46,7 +46,7 @@ function App() {
       <Backdrop open={open}/>
       <div className="content">
         <Routes>
-          <Route path="/anime/home" element={<div>
+          <Route path="/home" element={<div>
             <Home
               url={url}
               page={1}
@@ -63,7 +63,7 @@ function App() {
               onChange={handleChange}
             />
           </div>} />
-          <Route path="/anime/airing" element={<div>
+          <Route path="/airing" element={<div>
             <Airing
               title="Currently Airing"
               url={url}
@@ -81,7 +81,7 @@ function App() {
               onChange={handleChange}
             />
           </div>} />
-          <Route path="/anime/top" element={<div>
+          <Route path="/top" element={<div>
             <TopAnime
               title="Top Rated"
               url={url}
@@ -97,7 +97,7 @@ function App() {
               onChange={handleChange}
             />
           </div>} />
-          <Route path="/anime/popular" element={<div>
+          <Route path="/popular" element={<div>
             <Popular
               title="Most Popular"
               url={url}
@@ -113,7 +113,7 @@ function App() {
               onChange={handleChange}
             />
           </div>} />
-          <Route path="/anime/:id" element={<AnimeDetails />} />
+          <Route path="/:id" element={<AnimeDetails />} />
         </Routes>
       </div>
     </div>
