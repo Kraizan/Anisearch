@@ -15,16 +15,21 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: #458c7a;
-  height: 10vh;
+  height: 13vh;
   color: #fffef5;
 }
 
 /*Header and navigation bar*/
 .brand-name {
   float: left;
-  font-size: 2rem;
+  font-size: 2.1rem;
   text-align: left;
   padding-left: 4%;
+}
+
+.brand-name a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .brand-tagline {
@@ -65,6 +70,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+  height: 15vh;
 }
 
 /* Menu Icon*/
@@ -180,4 +186,29 @@ header {
 }
 .page-header h2{
   font-size: 2rem;
+}
+
+/* Footer styles */
+footer{
+  background-color: #458c7a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2% 0;
+  height: 30%;
+  color: #fff;
+}
+footer div{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin: 1% auto;
+}
+footer div a{
+  color: #fff;
+}
+footer p a{
+  text-decoration: underline;
+  color: inherit;
 }

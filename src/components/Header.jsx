@@ -5,11 +5,11 @@ function Header(){
   return (
     <header id="top" className="navbar">
       <div className="brand-name">
-        Anisearch
+        <a href="/">AniSearch</a>
       </div>
       <div className="nav-list">
         <TemporaryDrawer
-          data={["Home", "Airing", "Top", "Popular", "Recommend"]}
+          data={["Home", "Airing", "Top", "Popular"]}
         />
       </div>
     </header>

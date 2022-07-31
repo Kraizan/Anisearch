@@ -18,11 +18,10 @@ function AnimeDetails(props){
       const res = await response.data;
       setAnimeData(res.data);
       setLoading(false);
-      console.log(animeData);
     }
     fetch();
 
-  },[])
+  },[url])
   return(
     <div>
       {
@@ -32,7 +31,7 @@ function AnimeDetails(props){
           <div className="info-col">
             <div className="border-margin">
               <div className="image-container">
-                <img className="anime-image" src={animeData.images.jpg.image_url}/>
+                <img className="anime-image" src={animeData.images.jpg.image_url} alt={animeData.title}/>
               </div>
               <div>
                 <Button
@@ -89,13 +88,14 @@ function AnimeDetails(props){
                 </div>
               </div>
               <div>
-                {/* <iframe
+                <iframe
                   src={animeData.trailer.embed_url}
                   frameBorder="20px"
                   allow="encrypted-media"
                   allowFullScreen
                   title="video"
-                /> */}
+                  alt="Trailer not available."
+                />
               </div>
             </div>
             <div>

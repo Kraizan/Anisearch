@@ -9,6 +9,7 @@ import FetchData from "./FetchData"
 import Pagination from '@mui/material/Pagination'
 import {Routes, Route} from "react-router-dom"
 import Backdrop from "./Loading"
+import Footer from "./Footer"
 
 
 function App() {
@@ -46,23 +47,27 @@ function App() {
       <Backdrop open={open}/>
       <div className="content">
         <Routes>
-          <Route path="/home" element={<div>
-            <Home
-              url={url}
-              page={1}
-              onDataChange={handleSetChanges}
-              data={data}
-              query={query}
-              filter={filter}
-              totalPages={totalPages}
-            />
-            <Pagination
-              count={totalPages}
-              className="pagination"
-              page={page}
-              onChange={handleChange}
-            />
-          </div>} />
+          {["/","home"].map((path,index) => {
+            return (
+              <Route path={path} element={<div>
+                <Home
+                  url={url}
+                  page={1}
+                  onDataChange={handleSetChanges}
+                  data={data}
+                  query={query}
+                  filter={filter}
+                  totalPages={totalPages}
+                />
+                <Pagination
+                  count={totalPages}
+                  className="pagination"
+                  page={page}
+                  onChange={handleChange}
+                />
+              </div>} />
+            )
+          })}
           <Route path="/airing" element={<div>
             <Airing
               title="Currently Airing"
@@ -115,6 +120,7 @@ function App() {
           </div>} />
           <Route path="/:id" element={<AnimeDetails />} />
         </Routes>
+        <Footer />
       </div>
     </div>
   );

@@ -13,7 +13,6 @@ function TemporaryDrawer(props) {
   const [toggle, setToggle] = React.useState(false);
 
   const toggleDrawer = (anchor, open) => (event) => {
-    console.log(event.target.innerText);
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }

@@ -1,6 +1,5 @@
 import React from "react";
 import AnimeList from "./AnimeList"
-import SearchBar from "./SearchBar"
 import PageHeading from "./PageHeading"
 
 function Home(props) {
